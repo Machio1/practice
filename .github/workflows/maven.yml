@@ -24,7 +24,7 @@ jobs:
       options: --user root
 
     steps:
-    - uses: actions/checkout@ea7dab6e02dc0cda55c56dcffbf98248f0d4c2ff
+    - uses: actions/checkout@v4
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
