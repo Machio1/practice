@@ -17,7 +17,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     container:
       image: maven:3.9-eclipse-temurin-26
