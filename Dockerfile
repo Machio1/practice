@@ -1,4 +1,4 @@
-FROM maven:3.9-eclipse-temurin-26
+FROM maven:3.9-eclipse-temurin-21
 
 RUN addgroup -S app \
     && adduser -S app -G app
