@@ -27,7 +27,7 @@ jobs:
 #      options: --user root
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Run tests with Maven
