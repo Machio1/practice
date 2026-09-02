@@ -1,0 +1,24 @@
+### POST request run Maven tests
+POST https://api.github.com/repos/Machio1/practice/dispatches
+    Headers: "Authorization: Bearer {{GITHUB_TOKEN}}"
+    Content-Type: application/json
+
+    {
+        "event_type":"run-tests",
+        "client_payload":{
+        "branch":"master"
+        }
+    }
+
+
+### POST request run Maven build
+POST https://api.github.com/repos/Machio1/practice/dispatches
+    Headers: "Authorization: Bearer {{GITHUB_TOKEN}}"
+    Content-Type: application/json
+
+    {
+        "event_type":"build",
+        "client_payload":{
+        "branch":"master"
+        }
+    }

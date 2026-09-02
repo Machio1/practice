@@ -15,8 +15,6 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  repository_dispatch:
-    types: [ "build", "run-tests" ]
 
 jobs:
   build:

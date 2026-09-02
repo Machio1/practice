@@ -6,15 +6,11 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Run Maven Build
 
 on:
   #  schedule:
   #    - cron: '0 0 * * *'
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
   repository_dispatch:
     types: [ "build"]
 
