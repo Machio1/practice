@@ -15,9 +15,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  Permissions:
-    contents: read
-    dependency-graph: write
+permissions:
+  contents: read
+  dependency-graph: write
 
 jobs:
   build-and-test:
