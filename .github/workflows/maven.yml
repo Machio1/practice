@@ -34,7 +34,7 @@ jobs:
       run: mvn -B verify
 
     - uses: actions/upload-artifact@v4
-    - name: Upload test reports
+      name: Upload test reports
       with:
         name: test-reports
         path: target/surefire-reports/
