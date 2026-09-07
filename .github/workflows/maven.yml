@@ -38,6 +38,9 @@ jobs:
         env:
           CUSTOM_ENV_VAR: "Here's my variable"
 
+      - name: Check OS
+        if: runner.os == 'Linux'
+        run: echo "Running on $RUNNER_OS"
 
       - uses: actions/checkout@v7
       - name: Build with Maven
