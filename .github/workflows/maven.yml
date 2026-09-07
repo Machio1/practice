@@ -29,13 +29,9 @@ jobs:
 #      options: --user root
 
     steps:
-      - name: test1
+      - name: Branch deploy comment
         uses: actions/checkout@v7
-      - run: echo "Test1 - Deploying to branch $GITHUB_REF"
-
-      - name: test2
-        uses: actions/checkout@v7
-      - run: echo "Test2 - Deploying to branch ${{ github.ref_name }}"
+      - run: echo "Deploying to branch ${{ github.ref_name }}"
 
       - uses: actions/checkout@v7
       - name: Build with Maven
