@@ -38,6 +38,15 @@ jobs:
         env:
           CUSTOM_ENV_VAR: "Here's my variable"
 
+      - name: setting env var
+        id: step_one
+        run: |
+          echo "action_state=success" >> $GITHUB_ENV
+
+      - name: use env var
+        id: step_two
+        run: echo "The action state is $action_state"
+
       - name: Check OS
         if: runner.os == 'Linux'
         run: echo "Running on $RUNNER_OS"
