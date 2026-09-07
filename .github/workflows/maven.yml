@@ -20,6 +20,7 @@ permissions:
 
 jobs:
   build-and-test:
+    if: github.ref == 'refs/heads/master'
     name: Build and Test
     runs-on: ubuntu-latest
     container:
@@ -28,6 +29,14 @@ jobs:
 #      options: --user root
 
     steps:
+    - name: test1
+      uses: actions/checkout@v7
+    - run: echo "Test1 - Deploying to branch $GITHUB_REF"
+
+    - name: test2
+      uses: actions/checkout@v7
+    - run: echo "Test2 - Deploying to branch ${{ github.ref_name }}"
+
     - uses: actions/checkout@v7
     - name: Build with Maven
       run: mvn -B verify
