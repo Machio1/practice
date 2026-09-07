@@ -29,27 +29,27 @@ jobs:
 #      options: --user root
 
     steps:
-#    - name: test1
-#      uses: actions/checkout@v7
-#    - run: echo "Test1 - Deploying to branch $GITHUB_REF"
-#
-#    - name: test2
-#      uses: actions/checkout@v7
-#    - run: echo "Test2 - Deploying to branch ${{ github.ref_name }}"
+      - name: test1
+        uses: actions/checkout@v7
+      - run: echo "Test1 - Deploying to branch $GITHUB_REF"
 
-    - uses: actions/checkout@v7
-    - name: Build with Maven
-      run: mvn -B verify
+      - name: test2
+        uses: actions/checkout@v7
+      - run: echo "Test2 - Deploying to branch ${{ github.ref_name }}"
 
-    - uses: actions/upload-artifact@v4
-      name: Upload test reports
-      with:
-        name: test-reports
-        path: target/surefire-reports/
+      - uses: actions/checkout@v7
+      - name: Build with Maven
+        run: mvn -B verify
 
-      #Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
-    - name: Update dependency graph
-      uses: advanced-security/maven-dependency-submission-action@893a1d8754524d36719ec3502a3d3da6cc52a0f6
-      with:
-        ignore-maven-wrapper: true
+      - uses: actions/upload-artifact@v4
+        name: Upload test reports
+        with:
+          name: test-reports
+          path: target/surefire-reports/
+
+        #Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
+      - name: Update dependency graph
+        uses: advanced-security/maven-dependency-submission-action@893a1d8754524d36719ec3502a3d3da6cc52a0f6
+        with:
+          ignore-maven-wrapper: true
 
