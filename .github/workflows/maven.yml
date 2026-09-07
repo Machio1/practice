@@ -34,7 +34,7 @@ jobs:
       - run: echo "Deploying to branch ${{ github.ref_name }}"
 
       - name: Custom env
-        run: echo "Custom environment variable is ${{ CUSTOM_ENV_VAR }}"
+        run: echo "Custom environment variable is $CUSTOM_ENV_VAR"
         env:
           CUSTOM_ENV_VAR: "Here's my variable"
 
