@@ -16,7 +16,7 @@ on:
   pull_request:
     branches: [ "master" ]
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   build-and-test:
@@ -49,6 +49,7 @@ jobs:
 
         #Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
       - name: Update dependency graph
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: advanced-security/maven-dependency-submission-action@893a1d8754524d36719ec3502a3d3da6cc52a0f6
         with:
           ignore-maven-wrapper: true
