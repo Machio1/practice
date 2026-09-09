@@ -1,4 +1,4 @@
-[![Maven Build](https://github.com/Machio1/practice/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/Machio1/practice/actions/workflows/maven.yml)
+[![Java CI with Maven](https://github.com/Machio1/practice/actions/workflows/maven.yml/badge.svg?branch=master)](https://github.com/Machio1/practice/actions/workflows/maven.yml)
 
 # Practice Project
 
