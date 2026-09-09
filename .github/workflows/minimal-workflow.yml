@@ -1,0 +1,8 @@
+name: Deploy to Azure
+
+on:
+  pull_request:
+
+jobs:
+  deploy-to-azure:
+    runs-on: ubuntu-latest
