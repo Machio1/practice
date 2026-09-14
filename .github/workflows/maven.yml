@@ -84,7 +84,8 @@ jobs:
           </head>
           <body>
           <h1>This is a Heading</h1>
-          <p>This is a paragraph.</p>
+          <p>This is a picture.</p>
+          <img src="images/elmo.gif" alt="Elmo waving.">
           </body>
           </html>
           EOF
@@ -92,7 +93,9 @@ jobs:
       - name: Upload file as artifact
         uses: actions/upload-artifact@v7
         with:
-          path: file.html
+          path: |
+            file.html
+            images/elmo.gif
           archive: false
 
   download-file:
