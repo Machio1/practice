@@ -34,27 +34,6 @@ jobs:
         uses: actions/checkout@v7
       - run: echo "Deploying to branch ${{ github.ref_name }}"
 
-      - name: Create file
-        run: |
-          cat <<'EOF' > file.txt
-          <!DOCTYPE html>
-          <html>
-          <head>
-          <title>Page Title</title>
-          </head>
-          <body>
-          <h1>This is a Heading</h1>
-          <p>This is a paragraph.</p>
-          </body>
-          </html>
-          EOF
-
-      - name: Upload file as artifact
-        uses: actions/upload-artifact@v7
-        with:
-          path: file.txt
-          archive: false
-
       - name: Custom env
         run: echo "Custom environment variable is $CUSTOM_ENV_VAR"
         env:
@@ -91,6 +70,32 @@ jobs:
         with:
           ignore-maven-wrapper: true
 
+  upload-artifact:
+    name: Upload artifact
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    steps:
+      - name: Create file
+        run: |
+          cat <<'EOF' > file.html
+          <!DOCTYPE html>
+          <html>
+          <head>
+          <title>Page Title</title>
+          </head>
+          <body>
+          <h1>This is a Heading</h1>
+          <p>This is a paragraph.</p>
+          </body>
+          </html>
+          EOF
+
+      - name: Upload file as artifact
+        uses: actions/upload-artifact@v7
+        with:
+          path: file.html
+          archive: false
+
   download-file:
     name: Download file
     runs-on: ubuntu-latest
@@ -102,4 +107,4 @@ jobs:
           name: file
 
       - name: show file contents
-        run: cat file.txt
+        run: cat file.html
