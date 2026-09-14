@@ -41,6 +41,7 @@ jobs:
         with:
           name: file
           path: file.txt
+          archive: false
 
       - name: Custom env
         run: echo "Custom environment variable is $CUSTOM_ENV_VAR"
