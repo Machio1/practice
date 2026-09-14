@@ -61,7 +61,6 @@ jobs:
         with:
           name: test-reports
           path: target/surefire-reports/
-          archive: false
 
         #Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
       - name: Update dependency graph
