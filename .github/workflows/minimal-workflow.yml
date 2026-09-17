@@ -1,8 +1,11 @@
-#name: Deploy to Azure
-#
-#on:
-#  pull_request:
-#
-#jobs:
-#  deploy-to-azure:
-#    runs-on: ubuntu-latest
+name: Deploy to Azure
+
+on:
+ pull_request:
+
+jobs:
+ deploy-to-azure:
+   runs-on: ubuntu-latest
+   steps: 
+     - name: some output
+       run: echo "**** SOME TEXT ****"
