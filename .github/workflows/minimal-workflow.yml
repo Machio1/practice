@@ -1,10 +1,10 @@
-name: Deploy to Azure
+name: Minimal workflow
 
 on:
  pull_request:
 
 jobs:
- deploy-to-azure:
+ minimal-workflow:
    runs-on: ubuntu-latest
    steps: 
      - name: some output
