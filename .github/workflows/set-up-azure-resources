@@ -1,3 +1,6 @@
+
+NOTE: This is not set as .yml because it will fail unless written properly.
+
 #steps:
 #  - name: Checkout repository
 #    uses: actions/checkout@v2
