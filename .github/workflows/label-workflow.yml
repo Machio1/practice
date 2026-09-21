@@ -15,3 +15,15 @@ jobs:
         run: |
           echo "Potato label detected! Running potato script..."
           # Add your potato-related commands here
+
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.label.name == 'build'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run build script
+        run: |
+          echo "Build label detected! Running build script..."
+          mvn -B package --file pom.xml
+    
