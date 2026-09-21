@@ -93,6 +93,7 @@ jobs:
           name: file
           path: file.html
           archive: false
+          overwrite: true
 
   download-file:
     name: Download file
