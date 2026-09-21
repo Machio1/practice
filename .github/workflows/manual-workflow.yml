@@ -1,0 +1,19 @@
+name: manual-workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      custom-input:
+        description: 'Custom input for the workflow'
+        required: true
+        default: 'Manual workflow complete!'
+
+jobs:
+  manual-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run manual script
+        run: |
+          echo "This is a manually triggered workflow with custom input: ${{ github.event.inputs.custom-input }}"
