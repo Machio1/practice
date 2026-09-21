@@ -90,13 +90,14 @@ jobs:
       - name: Upload file as artifact
         uses: actions/upload-artifact@v7
         with:
+          name: file
           path: file.html
           archive: false
 
   download-file:
     name: Download file
     runs-on: ubuntu-latest
-    needs: build-and-test
+    needs: upload-artifact
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v7
